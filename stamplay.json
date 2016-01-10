@@ -1,0 +1,10 @@
+{
+  "appId": "angularetsydemo",
+  "apiKey": "7f77bdb00975464c822d0b62b2ba33ec47d893867ffad14a43c4a7213eb6919e",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
