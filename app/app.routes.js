@@ -2,7 +2,7 @@
  * Created by Tim on 1/10/2016.
  */
 angular
-    .module('app.routes' [])
+    .module('app.routes', [])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', AppRoutes]);
 
 /**
