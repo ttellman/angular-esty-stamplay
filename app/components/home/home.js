@@ -4,8 +4,14 @@
 // home.js
 angular
     .module('app.home', [])
-    .controller('HomeController', HomeController);
+    .controller('HomeController', ['Product', HomeController]);
 
-function HomeController() {
+function HomeController(Product) {
     var home = this;
+
+    //get all products here
+    Product.all()
+        .then(function (data) {
+            home.products = data.instance;
+        });
 }

@@ -17,7 +17,7 @@
     <!-- load the stamplay sdk and configure it -->
     <script src="./bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
     <script>
-        Stamplay.init('angularetsy');   // initiate stamplay app with app name
+        Stamplay.init('angularetsydemo');   // initiate stamplay app with app name
     </script>
 
     <!-- load our other JS dependencies -->
@@ -69,14 +69,14 @@
 
                 <!-- logged in navigation
                 <!-- todo: check for logged in user -->
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" ng-show="currentUser.id">
                     <li><a ui-sref="admin">Admin</a></li>
                     <li><a ui-sref="profile">Profile</a></li>
-                    <li><a ui-sref="#">Logout</a></li>
+                    <li><a ng-click="main.logout()">Logout</a></li>
                 </ul>
 
                 <!-- not logged in navigation -->
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" ng-show="!currentUser.id">
                     <li><a ui-sref="authenticate">Register</a></li>
                     <li><a ui-sref="authenticate">Sign in</a></li>
                 </ul>
@@ -86,7 +86,7 @@
 
     <!-- ui-router will inject our compont views here -->
     <main class="container">
-        <div ui.view></div>
+        <div ui-view></div>
     </main>
 
     <!-- FOOTER -->

@@ -12,7 +12,8 @@ angular.module('etsyApp', [
     'app.product',
     'app.profile',
     'app.shop',
-    'UserService'
+    'UserService',
+    'ProductService'
 ]).controller('MainController',['User', '$rootScope',  MainController]);
 
 /**
@@ -20,6 +21,7 @@ angular.module('etsyApp', [
  */
 function MainController(User, $rootScope) {
     var main = this;
+    main.logout = logout; // bind logout function to controller
     $rootScope.currentUser = {}; //create an object to hold current user
 
     //get the current user and bind there data to the $rootScope.currentuser object
@@ -35,4 +37,8 @@ function MainController(User, $rootScope) {
             }
         });
 
+    function logout() {
+        User.logout();
+        $rootScope.currentUser = {};
+    }
 }

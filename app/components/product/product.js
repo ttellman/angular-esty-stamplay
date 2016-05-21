@@ -4,8 +4,13 @@
 // product.js
 angular
     .module('app.product', [])
-    .controller('ProductController', ProductController);
+    .controller('ProductController', ['Product', '$stateParams', ProductController]);
 
-function ProductController() {
+function ProductController(Product, $stateParams) {
     var product = this;
+
+    Product.get($stateParams.id)
+        .then(function(data) {
+            product.listing = data.instance;
+        });
 }

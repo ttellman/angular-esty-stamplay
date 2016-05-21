@@ -41,11 +41,11 @@ function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
             controller : 'ProductController as product'
         })
 
-        //log/signup page
+        //login/signup page
         .state('authenticate', {
             url        : '/authenticate',
             templateUrl: '/app/components/authenticate/authenticate.html',
-            controller : 'AuntenticateController as authenticate'
+            controller : 'AuthenticateController as authenticate'
         })
 
         // profile page

@@ -3,7 +3,7 @@
  */
 angular
     .module('UserService', [])
-    .factory('User', ['$stamplay', '$q', 'UserService']);
+    .factory('User', ['$stamplay', '$q', UserService]);
 
 function UserService($stamplay, $q) {
 
